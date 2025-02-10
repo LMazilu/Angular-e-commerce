@@ -1,0 +1,37 @@
+@if ( products.length > 0 ){
+<h2>Prodotti ({{ products.length }})</h2>
+}
+
+<ul class="pill-group">
+  @for (product of products | sort : 'price'; track product.id) {
+  <li class="pill" (click)="selectedProduct = product">
+    <!-- @switch (product?.title) { 
+    @case ('Microfono') {🎙️} 
+    @case ('Cuffie') {🎧}
+    @case ('Tastiera') {⌨️} 
+    @case ('Mouse') {🖱️} 
+    @default {🏷️} 
+  }
+  {{ product?.title }} -->
+   <app-product-view [id]="product.id"></app-product-view>
+  </li>
+  } @empty {
+  <li class="pill">Nessun prodotto</li>
+  }
+</ul>
+
+<p [class]="currentClassesObject"></p>
+
+@if (selectedProduct) {
+  <app-product-detail
+  #productDetail
+  [product]="selectedProduct"
+  (added)="onAdded($event)"
+>
+</app-product-detail>
+}
+
+<h2> Preferiti </h2>
+<app-favorites></app-favorites>
+
+

@@ -1,0 +1,20 @@
+@let selectedProduct = product();
+
+
+@if (selectedProduct) {
+<div>
+  <p>
+    Prodotto Selezionato:
+    <strong>{{ selectedProduct.title }}</strong>
+  </p>
+  <p>
+    Prezzo: <strong>{{ selectedProduct.price | currency : 'EUR' }}</strong>
+  </p>
+  <div class="pill-group">
+    @for (category of selectedProduct.categories | keyvalue; track category.key) {
+    <div class="pill">{{ category.value | lowercase }}</div>
+    }
+  </div>
+  <button (click)="addToCart()">Aggiungi al carrello</button>
+</div>
+}
