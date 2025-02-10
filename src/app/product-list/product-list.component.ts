@@ -1,5 +1,6 @@
 import {
   Component,
+  DestroyRef,
   inject,
   OnChanges,
   OnInit,
@@ -10,24 +11,24 @@ import { Product } from '../models/product';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { SortPipe } from '../pipes/sort.pipe';
 import { ProductsService } from '../services/products.service';
-import { FavoritesComponent } from '../favorites/favorites.component';
 import { ProductViewComponent } from '../product-view/product-view.component';
-import { favoritesFactory } from '../favorites';
+import { Observable, Subscription } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
   imports: [
     ProductDetailComponent,
     SortPipe,
-    FavoritesComponent,
     ProductViewComponent,
+    AsyncPipe
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
-  providers: [{provide:ProductsService, useFactory: favoritesFactory(false)}],
+  providers: [{provide:ProductsService, useClass: ProductsService},],
 })
 export class ProductListComponent implements OnInit, OnChanges, OnInit {
-  products: Product[] = [];
   currentClassesObject: object = {
     star: true,
     active: false,
@@ -35,10 +36,13 @@ export class ProductListComponent implements OnInit, OnChanges, OnInit {
   selectedProduct: Product | undefined;
   productDetail = viewChild(ProductDetailComponent);
   private productsService: ProductsService = inject(ProductsService);
+  private productSubscription: Subscription | undefined;
+  private destroyRef = inject(DestroyRef);
+  products$ : Observable<Product[]> | undefined;
 
   ngOnInit(): void {
     console.log('ProductDetailComponent initialized');
-    this.products = this.productsService.getProducts();
+    this.getProducts();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -54,15 +58,12 @@ export class ProductListComponent implements OnInit, OnChanges, OnInit {
     alert(`${product.title} aggiunto al carrello`);
   }
 
-  testAddProduct() {
-    this.products = [
-      ...this.products,
-      {
-        id: 5,
-        title: 'Nuovo prodotto',
-        price: 99,
-        categories: { 2: 'Computer', 4: 'Video' },
-      },
-    ];
+  private getProducts() {
+    // this.productSubscription = this.productsService.getProducts()
+    // .pipe(takeUntilDestroyed(this.destroyRef))
+    // .subscribe((products) => {
+    //   this.products = products;
+    // });
+    this.products$ = this.productsService.getProducts();
   }
 }
