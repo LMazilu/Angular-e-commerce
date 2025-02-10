@@ -1,0 +1,122 @@
+[NX Daemon Server] - 2025-01-28T08:34:03.367Z - Started listening on: \\.\pipe\nx\C:\Users\LIVIUM~1\AppData\Local\Temp\c85ef1e2617cbd178de8\d.sock
+[NX Daemon Server] - 2025-01-28T08:34:03.372Z - [WATCHER]: Subscribed to changes within: c:\Users\Liviu Mazilu\Projects\Formazione\my-app (native)
+[NX Daemon Server] - 2025-01-28T08:34:03.379Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-01-28T08:34:03.382Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-01-28T08:34:03.554Z - Time taken for 'loadSpecifiedNxPlugins' 4.918100000000095ms
+[NX Daemon Server] - 2025-01-28T08:34:03.666Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-01-28T08:34:03.667Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-01-28T08:34:03.685Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-01-28T08:34:03.705Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-01-28T08:34:03.713Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-01-28T08:34:03.716Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-01-28T08:34:04.165Z - Time taken for 'Load Nx Plugin: c:\Users\Liviu Mazilu\Projects\Formazione\my-app\node_modules\nx\src\plugins\project-json\build-nodes\project-json' 680.8712ms
+[NX Daemon Server] - 2025-01-28T08:34:04.168Z - Time taken for 'Load Nx Plugin: c:\Users\Liviu Mazilu\Projects\Formazione\my-app\node_modules\nx\src\plugins\package-json' 685.6879000000001ms
+[NX Daemon Server] - 2025-01-28T08:34:05.579Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-01-28T08:34:05.579Z - [REQUEST]: 
+[NX Daemon Server] - 2025-01-28T08:34:05.579Z - [REQUEST]: 
+[NX Daemon Server] - 2025-01-28T08:34:05.590Z - Time taken for 'loadDefaultNxPlugins' 2097.9617000000003ms
+[NX Daemon Server] - 2025-01-28T08:34:05.665Z - Time taken for 'build-project-configs' 43.016099999999824ms
+[NX Daemon Server] - 2025-01-28T08:34:05.884Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2025-01-28T08:34:05.887Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-01-28T08:34:05.888Z - Time taken for 'total for creating and serializing project graph' 2173.1723ms
+[NX Daemon Server] - 2025-01-28T08:34:05.889Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-01-28T08:34:05.889Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 2173. Response time: 3.
+[NX Daemon Server] - 2025-01-28T08:34:05.937Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-01-28T08:34:05.939Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-01-28T08:34:05.941Z - Time taken for 'total for creating and serializing project graph' 1.2065000000002328ms
+[NX Daemon Server] - 2025-01-28T08:34:05.941Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-01-28T08:34:05.942Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 2. Response time: 3.
+[NX Daemon Server] - 2025-01-28T08:34:05.970Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2025-01-28T08:34:05.971Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2025-01-28T08:34:05.971Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2025-01-28T08:34:05.978Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-01-28T11:34:05.989Z - [WATCHER]: Stopping the watcher for c:\Users\Liviu Mazilu\Projects\Formazione\my-app (sources)
+[NX Daemon Server] - 2025-01-28T11:34:05.992Z - [WATCHER]: Stopping the watcher for c:\Users\Liviu Mazilu\Projects\Formazione\my-app (outputs)
+[NX Daemon Server] - 2025-01-28T11:34:05.997Z - Server stopped because: "10800000ms of inactivity"
+[NX Daemon Server] - 2025-02-10T08:46:01.077Z - Started listening on: \\.\pipe\nx\C:\Users\LIVIUM~1\AppData\Local\Temp\c85ef1e2617cbd178de8\d.sock
+[NX Daemon Server] - 2025-02-10T08:46:01.101Z - [WATCHER]: Subscribed to changes within: c:\Users\Liviu Mazilu\Projects\Formazione\my-app (native)
+[NX Daemon Server] - 2025-02-10T08:46:01.109Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-02-10T08:46:01.119Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-02-10T08:46:01.314Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-02-10T08:46:01.314Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-02-10T08:46:01.315Z - Time taken for 'loadSpecifiedNxPlugins' 11.414200000000164ms
+[NX Daemon Server] - 2025-02-10T08:46:01.316Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-02-10T08:46:01.328Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-02-10T08:46:03.187Z - Time taken for 'Load Nx Plugin: c:\Users\Liviu Mazilu\Projects\Formazione\my-app\node_modules\nx\src\plugins\project-json\build-nodes\project-json' 1960.3069000000005ms
+[NX Daemon Server] - 2025-02-10T08:46:03.189Z - Time taken for 'Load Nx Plugin: c:\Users\Liviu Mazilu\Projects\Formazione\my-app\node_modules\nx\src\plugins\package-json' 1964.9474999999993ms
+[NX Daemon Server] - 2025-02-10T08:46:04.500Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-02-10T08:46:04.501Z - [REQUEST]: 
+[NX Daemon Server] - 2025-02-10T08:46:04.501Z - [REQUEST]: 
+[NX Daemon Server] - 2025-02-10T08:46:04.518Z - Time taken for 'loadDefaultNxPlugins' 3278.9820999999993ms
+[NX Daemon Server] - 2025-02-10T08:46:04.707Z - Time taken for 'build-project-configs' 111.83200000000033ms
+[NX Daemon Server] - 2025-02-10T08:46:04.778Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2025-02-10T08:46:04.781Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-02-10T08:46:04.783Z - Time taken for 'total for creating and serializing project graph' 3453.1768ms
+[NX Daemon Server] - 2025-02-10T08:46:04.787Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-02-10T08:46:04.787Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 3454. Response time: 6.
+[NX Daemon Server] - 2025-02-10T08:46:04.799Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2025-02-10T08:46:04.800Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2025-02-10T08:46:04.800Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2025-02-10T08:46:04.802Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-02-10T09:27:28.133Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-02-10T09:27:28.136Z - [WATCHER]: Stopping the watcher for c:\Users\Liviu Mazilu\Projects\Formazione\my-app (sources)
+[NX Daemon Server] - 2025-02-10T09:27:28.136Z - [WATCHER]: Stopping the watcher for c:\Users\Liviu Mazilu\Projects\Formazione\my-app (sources)
+[NX Daemon Server] - 2025-02-10T09:27:28.136Z - [WATCHER]: Stopping the watcher for c:\Users\Liviu Mazilu\Projects\Formazione\my-app (outputs)
+[NX Daemon Server] - 2025-02-10T09:27:28.141Z - Server stopped because: "LOCK_FILES_CHANGED"
+[NX Daemon Server] - 2025-02-10T09:29:04.108Z - Started listening on: \\.\pipe\nx\C:\Users\LIVIUM~1\AppData\Local\Temp\c85ef1e2617cbd178de8\d.sock
+[NX Daemon Server] - 2025-02-10T09:29:04.137Z - [WATCHER]: Subscribed to changes within: c:\Users\Liviu Mazilu\Projects\Formazione\my-app (native)
+[NX Daemon Server] - 2025-02-10T09:29:04.144Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-02-10T09:29:04.150Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-02-10T09:29:04.233Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-02-10T09:29:04.234Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-02-10T09:29:04.235Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-02-10T09:29:04.239Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-02-10T09:29:04.292Z - Time taken for 'loadSpecifiedNxPlugins' 4.349399999999605ms
+[NX Daemon Server] - 2025-02-10T09:29:04.745Z - Time taken for 'Load Nx Plugin: c:\Users\Liviu Mazilu\Projects\Formazione\my-app\node_modules\nx\src\plugins\project-json\build-nodes\project-json' 499.8899000000001ms
+[NX Daemon Server] - 2025-02-10T09:29:04.750Z - Time taken for 'Load Nx Plugin: c:\Users\Liviu Mazilu\Projects\Formazione\my-app\node_modules\nx\src\plugins\package-json' 505.8361ms
+[NX Daemon Server] - 2025-02-10T09:29:05.496Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-02-10T09:29:05.496Z - [REQUEST]: 
+[NX Daemon Server] - 2025-02-10T09:29:05.497Z - [REQUEST]: 
+[NX Daemon Server] - 2025-02-10T09:29:05.515Z - Time taken for 'loadDefaultNxPlugins' 1253.5962ms
+[NX Daemon Server] - 2025-02-10T09:29:05.642Z - Time taken for 'build-project-configs' 79.18200000000024ms
+[NX Daemon Server] - 2025-02-10T09:29:06.260Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2025-02-10T09:29:06.262Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-02-10T09:29:06.262Z - Time taken for 'total for creating and serializing project graph' 2022.7194999999997ms
+[NX Daemon Server] - 2025-02-10T09:29:06.263Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-02-10T09:29:06.263Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 2023. Response time: 1.
+[NX Daemon Server] - 2025-02-10T09:29:06.272Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2025-02-10T09:29:06.273Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2025-02-10T09:29:06.273Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2025-02-10T09:29:06.274Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-02-10T09:29:06.519Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-02-10T09:29:06.520Z - [WATCHER]: Stopping the watcher for c:\Users\Liviu Mazilu\Projects\Formazione\my-app (sources)
+[NX Daemon Server] - 2025-02-10T09:29:30.367Z - Started listening on: \\.\pipe\nx\C:\Users\LIVIUM~1\AppData\Local\Temp\c85ef1e2617cbd178de8\d.sock
+[NX Daemon Server] - 2025-02-10T09:29:30.385Z - [WATCHER]: Subscribed to changes within: c:\Users\Liviu Mazilu\Projects\Formazione\my-app (native)
+[NX Daemon Server] - 2025-02-10T09:29:30.389Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-02-10T09:29:30.393Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-02-10T09:29:30.431Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-02-10T09:29:30.431Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-02-10T09:29:30.432Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-02-10T09:29:30.434Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-02-10T09:29:30.474Z - Time taken for 'loadSpecifiedNxPlugins' 2.728499999999997ms
+[NX Daemon Server] - 2025-02-10T09:29:30.852Z - Time taken for 'Load Nx Plugin: c:\Users\Liviu Mazilu\Projects\Formazione\my-app\node_modules\nx\src\plugins\package-json' 414.6958ms
+[NX Daemon Server] - 2025-02-10T09:29:30.865Z - Time taken for 'Load Nx Plugin: c:\Users\Liviu Mazilu\Projects\Formazione\my-app\node_modules\nx\src\plugins\project-json\build-nodes\project-json' 427.2225ms
+[NX Daemon Server] - 2025-02-10T09:29:30.871Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-02-10T09:29:30.871Z - [REQUEST]: 
+[NX Daemon Server] - 2025-02-10T09:29:30.871Z - [REQUEST]: 
+[NX Daemon Server] - 2025-02-10T09:29:30.877Z - Time taken for 'loadDefaultNxPlugins' 434.8068ms
+[NX Daemon Server] - 2025-02-10T09:29:30.914Z - Time taken for 'build-project-configs' 22.876300000000015ms
+[NX Daemon Server] - 2025-02-10T09:29:30.945Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2025-02-10T09:29:30.946Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-02-10T09:29:30.947Z - Time taken for 'total for creating and serializing project graph' 511.561ms
+[NX Daemon Server] - 2025-02-10T09:29:30.947Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-02-10T09:29:30.948Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 512. Response time: 2.
+[NX Daemon Server] - 2025-02-10T09:29:30.953Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2025-02-10T09:29:30.954Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2025-02-10T09:29:30.954Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2025-02-10T09:29:30.955Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-02-10T09:29:31.919Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-02-10T09:29:31.951Z - [WATCHER]: Stopping the watcher for c:\Users\Liviu Mazilu\Projects\Formazione\my-app (sources)
+[NX Daemon Server] - 2025-02-10T09:29:31.951Z - [WATCHER]: Stopping the watcher for c:\Users\Liviu Mazilu\Projects\Formazione\my-app (sources)
+[NX Daemon Server] - 2025-02-10T09:29:31.951Z - [WATCHER]: Stopping the watcher for c:\Users\Liviu Mazilu\Projects\Formazione\my-app (outputs)
+[NX Daemon Server] - 2025-02-10T09:29:31.952Z - Server stopped because: "Stopping the daemon the set of ignored files changed (native)"

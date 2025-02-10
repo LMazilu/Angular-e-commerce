@@ -1,0 +1,336 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.4.0",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [],
+    "projectFileMap": {
+      "my-app": [
+        {
+          "file": ".editorconfig",
+          "hash": "8037249353422744134"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "7627632133633016550"
+        },
+        {
+          "file": ".vscode/extensions.json",
+          "hash": "846410922303958854"
+        },
+        {
+          "file": ".vscode/launch.json",
+          "hash": "17406702432687230417"
+        },
+        {
+          "file": ".vscode/tasks.json",
+          "hash": "10093397977228577162"
+        },
+        {
+          "file": "README.md",
+          "hash": "18131734499861911924"
+        },
+        {
+          "file": "emoji.txt",
+          "hash": "11544786845047882581"
+        },
+        {
+          "file": "nx.json",
+          "hash": "10013070994249884071"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "18118920224339121510"
+        },
+        {
+          "file": "package.json",
+          "hash": "11046627744342818559",
+          "deps": [
+            "npm:@angular-devkit/build-angular",
+            "npm:@angular-devkit/core",
+            "npm:@angular-devkit/schematics",
+            "npm:@angular/cli",
+            "npm:@angular/compiler-cli",
+            "npm:@nx/angular",
+            "npm:@nx/workspace",
+            "npm:@schematics/angular",
+            "npm:@types/jasmine",
+            "npm:jasmine-core",
+            "npm:karma",
+            "npm:karma-chrome-launcher",
+            "npm:karma-coverage",
+            "npm:karma-jasmine",
+            "npm:karma-jasmine-html-reporter",
+            "npm:nx",
+            "npm:typescript",
+            "npm:@angular/animations",
+            "npm:@angular/common",
+            "npm:@angular/compiler",
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/platform-browser",
+            "npm:@angular/platform-browser-dynamic",
+            "npm:@angular/router",
+            "npm:rxjs",
+            "npm:tslib",
+            "npm:zone.js"
+          ]
+        },
+        {
+          "file": "project.json",
+          "hash": "7672631014180281049"
+        },
+        {
+          "file": "public/favicon.ico",
+          "hash": "3988961587069885523"
+        },
+        {
+          "file": "src/app/app.component.css",
+          "hash": "17183746244399274931"
+        },
+        {
+          "file": "src/app/app.component.html",
+          "hash": "5303692013423027487"
+        },
+        {
+          "file": "src/app/app.component.spec.ts",
+          "hash": "10675740796368088138",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/app.component.ts",
+          "hash": "8033820560554383196",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/app.config.ts",
+          "hash": "16561019206697382666",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/app.routes.ts",
+          "hash": "809736233805555256",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/app.settings.ts",
+          "hash": "14482223155441009858",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/directives/copyright.directive.spec.ts",
+          "hash": "15901412164584523582"
+        },
+        {
+          "file": "src/app/directives/copyright.directive.ts",
+          "hash": "15270745741806040532",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/directives/numeric.directive.spec.ts",
+          "hash": "5660728364125311623"
+        },
+        {
+          "file": "src/app/directives/numeric.directive.ts",
+          "hash": "13482612220723483619",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/favorites.ts",
+          "hash": "11927252942711133114"
+        },
+        {
+          "file": "src/app/favorites/favorites.component.css",
+          "hash": "988248775316796060"
+        },
+        {
+          "file": "src/app/favorites/favorites.component.html",
+          "hash": "2206028474083666408"
+        },
+        {
+          "file": "src/app/favorites/favorites.component.spec.ts",
+          "hash": "2225057466356792142",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/favorites/favorites.component.ts",
+          "hash": "16763304171067698791",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/models/product.ts",
+          "hash": "17411763053170254842"
+        },
+        {
+          "file": "src/app/pipes/sort.pipe.spec.ts",
+          "hash": "13173445727491423896"
+        },
+        {
+          "file": "src/app/pipes/sort.pipe.ts",
+          "hash": "7190773151059861069",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/product-detail/product-detail.component.css",
+          "hash": "14122684685128383155"
+        },
+        {
+          "file": "src/app/product-detail/product-detail.component.html",
+          "hash": "3716532944747845228"
+        },
+        {
+          "file": "src/app/product-detail/product-detail.component.spec.ts",
+          "hash": "7549682472977042988",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/product-detail/product-detail.component.ts",
+          "hash": "15300805394633105314",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "src/app/product-list/product-list.component.css",
+          "hash": "10233299109085520741"
+        },
+        {
+          "file": "src/app/product-list/product-list.component.html",
+          "hash": "11872227884117826176"
+        },
+        {
+          "file": "src/app/product-list/product-list.component.spec.ts",
+          "hash": "17938296093256639868",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/product-list/product-list.component.ts",
+          "hash": "11293522527231583555",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/product-view/product-view.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "src/app/product-view/product-view.component.html",
+          "hash": "2617824402018296067"
+        },
+        {
+          "file": "src/app/product-view/product-view.component.spec.ts",
+          "hash": "5688048103967158700",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/product-view/product-view.component.ts",
+          "hash": "1631765274727176699",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/services/favorites.service.spec.ts",
+          "hash": "8971756662687403890",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/services/favorites.service.ts",
+          "hash": "3732869050456194533",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/services/product-view.service.spec.ts",
+          "hash": "438510309935477126",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/services/product-view.service.ts",
+          "hash": "13986811766711597749",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/services/products.service.spec.ts",
+          "hash": "4063097647588315587",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/app/services/products.service.ts",
+          "hash": "3219862718873557244",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "src/index.html",
+          "hash": "2604760665667365343"
+        },
+        {
+          "file": "src/main.ts",
+          "hash": "4169901790405087765",
+          "deps": [
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "src/styles.css",
+          "hash": "6980806971312944234"
+        },
+        {
+          "file": "tsconfig.app.json",
+          "hash": "14560978611694835822"
+        },
+        {
+          "file": "tsconfig.json",
+          "hash": "5540552589929968073"
+        },
+        {
+          "file": "tsconfig.spec.json",
+          "hash": "11023685540591620072"
+        }
+      ]
+    }
+  }
+}
