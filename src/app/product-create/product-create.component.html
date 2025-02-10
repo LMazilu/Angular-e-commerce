@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<h1>Aggiungi un prodotto</h1>
+<form [formGroup]="productForm!" (ngSubmit)="createProduct()">
+  <div>
+    <label for="title">Titolo</label>
+    <input id="title" formControlName="title" required />
+  </div>
+  <div>
+    <label for="price">Prezzo</label>
+    <input id="price" formControlName="price" type="number" required/>
+  </div>
+  <div>
+    <label for="category">Categoria</label>
+    <select id="category" formControlName="category">
+      <option>Scegli una categoria</option>
+      <option value="electronics">Electronics</option>
+      <option value="jewelery">Jewelery</option>
+      <option>Altro</option>
+    </select>
+  </div>
+  <!-- <h2> Dettagli aggiuntivi </h2>
+  <form formGroupName="extra">
+    <div>
+      <label for="description">Descrizione</label>
+      <input id="description" formControlName="description" />
+    </div>
+    <div>
+      <label for="image">Immagine</label>
+      <input id="image" formControlName="image" />
+    </div>
+  </form> -->
+  <div>
+    <button type="submit">Crea</button>
+  </div>
+</form>

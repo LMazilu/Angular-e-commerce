@@ -1,20 +1,37 @@
-@let selectedProduct = product();
+<!DOCTYPE html>
+@let product = (product$ | async);
 
 
-@if (selectedProduct) {
+@if (product) {
 <div>
   <p>
     Prodotto Selezionato:
-    <strong>{{ selectedProduct.title }}</strong>
+    <strong>{{ product.title }}</strong>
   </p>
   <p>
-    Prezzo: <strong>{{ selectedProduct.price | currency : 'EUR' }}</strong>
+    Prezzo: <strong>{{ product.price | currency : 'EUR' }}</strong>
   </p>
+
+  <form (ngSubmit)="changePrice(product)" #priceForm="ngForm">
+      <input name="price" type="number" placeholder="Nuovo prezzo"
+        required min="1"
+        #priceCtrl="ngModel" [(ngModel)]="price">
+      <button class="secondary" type="submit" [disabled]="priceForm.invalid">Modifica</button>
+      @if (priceCtrl.dirty && (priceCtrl.invalid || priceCtrl.hasError('min'))) {
+        <span class="help-text">Per favore inserisci un valore valido</span>
+      }
+  </form>
+
   <div class="pill-group">
-    @for (category of selectedProduct.categories | keyvalue; track category.key) {
-    <div class="pill">{{ category.value | lowercase }}</div>
-    }
+    {{ product.description }}
+    <p class="pill"> {{ product.category }} </p>
   </div>
-  <button (click)="addToCart()">Aggiungi al carrello</button>
+
+  <div class="button-group">
+    @if (authService.isLoggedIn()) {
+      <button (click)="addToCart(product.id!)">Aggiungi al carrello</button>
+    }
+    <button class="delete" (click)="remove(product)">Cancella</button>
+  </div>
 </div>
 }

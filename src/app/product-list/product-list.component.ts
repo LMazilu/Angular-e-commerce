@@ -1,69 +1,39 @@
-import {
-  Component,
-  DestroyRef,
-  inject,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-  viewChild,
-} from '@angular/core';
+import { Component, inject, viewChild } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Product } from '../models/product';
-import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { SortPipe } from '../pipes/sort.pipe';
+import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { ProductsService } from '../services/products.service';
-import { ProductViewComponent } from '../product-view/product-view.component';
-import { Observable, Subscription } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { AsyncPipe } from '@angular/common';
+import { of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
-  imports: [
-    ProductDetailComponent,
-    SortPipe,
-    ProductViewComponent,
-    AsyncPipe
-  ],
+  imports: [SortPipe, RouterLink],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
-  providers: [{provide:ProductsService, useClass: ProductsService},],
+  providers: [],
 })
-export class ProductListComponent implements OnInit, OnChanges, OnInit {
-  currentClassesObject: object = {
-    star: true,
-    active: false,
-  };
+export class ProductListComponent {
+  private route = inject(ActivatedRoute);
+  products = toSignal(
+    this.route.data.pipe(switchMap((data) => of(data['products']))),
+    { initialValue: [] }
+  );
+  // products = toSignal(
+  //   this.route.queryParamMap.pipe(
+  //     switchMap((params) => {
+  //       return inject(ProductsService).getProducts(Number(params.get('limit')));
+  //     })
+  //   ),
+  //   { initialValue: [] }
+  // );
   selectedProduct: Product | undefined;
   productDetail = viewChild(ProductDetailComponent);
-  private productsService: ProductsService = inject(ProductsService);
-  private productSubscription: Subscription | undefined;
-  private destroyRef = inject(DestroyRef);
-  products$ : Observable<Product[]> | undefined;
 
-  ngOnInit(): void {
-    console.log('ProductDetailComponent initialized');
-    this.getProducts();
-  }
+  constructor() {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    const product = changes['product'];
-    if (!product.isFirstChange()) {
-      const oldValue = product.previousValue;
-      const newValue = product.currentValue;
-      console.log(`Product changed from ${oldValue} to ${newValue}`);
-    }
-  }
-
-  onAdded(product: Product): void {
-    alert(`${product.title} aggiunto al carrello`);
-  }
-
-  private getProducts() {
-    // this.productSubscription = this.productsService.getProducts()
-    // .pipe(takeUntilDestroyed(this.destroyRef))
-    // .subscribe((products) => {
-    //   this.products = products;
-    // });
-    this.products$ = this.productsService.getProducts();
+  onAdded(): void {
+    alert(`${this.selectedProduct?.title} aggiunto al carrello`);
   }
 }

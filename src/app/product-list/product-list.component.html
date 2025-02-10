@@ -1,36 +1,46 @@
-@let products = (products$ | async)!;
-
-@if ( products.length > 0 ){
-<h2>Prodotti ({{ products.length }})</h2>
+<!DOCTYPE html>
+@if ( products().length != 0 ){
+  <div class ="caption">
+    <h2>Prodotti ({{ products().length }}) <a routerLink="new">
+      <svg
+        width="24"
+        height="24"
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        clip-rule="evenodd">
+        <path d="M11.5 0c6.347 0 11.5 5.153 11.5 11.5s-5.153 11.5-11.5 11.5-11.5-5.153-11.5-11.5 5.153-11.5 11.5-11.5zm0 1c5.795 0 10.5 4.705 10.5 10.5s-4.705 10.5-10.5 10.5-10.5-4.705-10.5-10.5 4.705-10.5 10.5-10.5zm.5 10h6v1h-6v6h-1v-6h-6v-1h6v-6h1v6z"/>
+      </svg>
+    </a>
+  </h2>
+  </div>
 }
 
 <ul class="pill-group">
-  @for (product of products | sort : 'price'; track product.id) {
+  @for (product of products()! | sort : 'category'; track product.id; let i = $index) {
   <li class="pill" (click)="selectedProduct = product">
-    <!-- @switch (product?.title) {
-    @case ('Microfono') {🎙️}
-    @case ('Cuffie') {🎧}
-    @case ('Tastiera') {⌨️}
-    @case ('Mouse') {🖱️}
+    @switch (product?.category) {
+    @case ('electronics') {💻}
+    @case ('jewelery') {💎}
+    @case ('men\'s clothing') {👔}
+    @case ('women\'s clothing') {👗}
     @default {🏷️}
   }
-  {{ product?.title }} -->
-   <app-product-view [id]="product.id"></app-product-view>
+  <a [routerLink]="[product.id]">{{ product.title }}</a>
   </li>
   } @empty {
   <li class="pill">Nessun prodotto</li>
   }
 </ul>
 
-<p [class]="currentClassesObject"></p>
 
-@if (selectedProduct) {
-  <app-product-detail
-  #productDetail
-  [product]="selectedProduct"
-  (added)="onAdded($event)"
+<!-- <app-product-detail
+  [id]="selectedProduct?.id"
+  (added)="onAdded()"
+  (delete)="selectedProduct = undefined"
+  #productdetail
 >
-</app-product-detail>
-}
+</app-product-detail> -->
+
+<!-- <app-product-create></app-product-create> -->
 
 

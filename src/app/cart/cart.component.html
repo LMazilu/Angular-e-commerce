@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<div [formGroup]="cartForm">
+    <div formArrayName="products">
+        @for(p of cartForm.controls.products.controls;track $index){
+            <label> {{products[$index].title}}</label>
+            <input type="number" [formControlName]="$index">
+        }
+    </div>
+</div>
