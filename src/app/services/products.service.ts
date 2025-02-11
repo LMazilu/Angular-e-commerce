@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Product } from '../models/product';
-import { catchError, map, Observable, of, tap, throwError } from 'rxjs';
+import { catchError, map, Observable, of, retry, tap, throwError } from 'rxjs';
 import { APP_SETTINGS } from '../app.settings';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams, HttpResponse, HttpStatusCode } from '@angular/common/http';
 
@@ -24,7 +24,7 @@ export class ProductsService {
             this.products = products;
             return this.products;
           }),
-          catchError(this.handleError)
+          retry(2)
         );
     }
     return of(this.products);
@@ -65,28 +65,4 @@ export class ProductsService {
     );
   }
 
-  private handleError(error: HttpErrorResponse) {
-    let message = '';
-
-    switch (error.status) {
-      case 0:
-        message = 'Connection error';
-        break;
-      case HttpStatusCode.InternalServerError:
-        message = 'Internal server error';
-        break;
-      case HttpStatusCode.BadRequest:
-        message = error.error.message;
-        break;
-      case HttpStatusCode.NotFound:
-        message = 'Not found';
-        break;
-      default:
-        message = 'An error occurred';
-    }
-
-    console.error(error.message);
-
-    return throwError(() => message);
-  }
 }
