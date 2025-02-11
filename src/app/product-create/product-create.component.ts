@@ -1,58 +1,60 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ProductsService } from '../services/products.service';
 import {
   FormBuilder,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ProductsService } from '../services/products.service';
+import { maxPriceValidator } from '../validators/max-price.validator';
 
 @Component({
   selector: 'app-product-create',
   imports: [ReactiveFormsModule],
   templateUrl: './product-create.component.html',
   styleUrl: './product-create.component.css',
+  providers: [],
 })
 export class ProductCreateComponent implements OnInit {
-  productForm: FormGroup<{
-    title: FormControl<string>;
-    price: FormControl<number | undefined>;
-    category: FormControl<string>;
-  }> | undefined;
-
-  // productForm = new FormGroup({
-  //   title: new FormControl('', { nonNullable: true }),
-  //   price: new FormControl<number | undefined>(undefined, {
-  //     nonNullable: true,
-  //   }),
-  //   category: new FormControl('', { nonNullable: true }),
-  //   // extra: new FormGroup({
-  //   //   image: new FormControl(''),
-  //   //   description: new FormControl(''),
-  //   // }),
-  // });
+  productForm:
+    | FormGroup<{
+        title: FormControl<string>;
+        price: FormControl<number | undefined>;
+        category: FormControl<string>;
+      }>
+    | undefined;
 
   constructor(
-    private productsService: ProductsService,
+    private productService: ProductsService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private builder: FormBuilder
   ) {}
-
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.buildForm();
+
+    this.productForm?.controls.category.valueChanges.subscribe(() => {
+      this.productForm?.controls.price.reset();
+    });
   }
-  
+
   buildForm() {
-    this.productForm = this.formBuilder.nonNullable.group({
-      title: [''],
-      price: this.formBuilder.nonNullable.control<number | undefined>(undefined),
-      category: ['']
+    this.productForm = this.builder.nonNullable.group({
+      title: ['', { nonNullable: true, validators: Validators.required }],
+      price: this.builder.nonNullable.control<number | undefined>(undefined, {
+        validators: [
+          Validators.required,
+          Validators.min(1),
+          maxPriceValidator(1000),
+        ],
+      }),
+      category: [''],
     });
   }
 
   createProduct() {
-    this.productsService
+    this.productService
       .addProduct(this.productForm!.value)
       .subscribe(() => this.router.navigate(['/products']));
   }
