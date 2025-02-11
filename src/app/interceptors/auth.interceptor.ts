@@ -1,7 +1,11 @@
-import { HttpInterceptorFn } from '@angular/common/http';
-import { AuthService} from '../services/auth.service';
+import {
+  HttpErrorResponse,
+  HttpInterceptorFn,
+  HttpStatusCode,
+} from '@angular/common/http';
 import { inject } from '@angular/core';
-import { AccessToken } from '../models/access-token';
+import { catchError, EMPTY, throwError } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(AuthService);
@@ -11,5 +15,14 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
       'Bearer ' + authService.getToken()
     ),
   });
-  return next(authReq);
+  return next(authReq).pipe(
+    catchError((error: HttpErrorResponse) => {
+      if (error.status === HttpStatusCode.Unauthorized) {
+        authService.logout();
+        return EMPTY;
+      } else {
+        return throwError(() => error);
+      }
+    })
+  );
 };

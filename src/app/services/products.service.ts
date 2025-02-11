@@ -1,8 +1,8 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Product } from '../models/product';
-import { catchError, map, Observable, of, retry, tap, throwError } from 'rxjs';
+import { map, Observable, of, retry, tap } from 'rxjs';
 import { APP_SETTINGS } from '../app.settings';
-import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams, HttpResponse, HttpStatusCode } from '@angular/common/http';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root',
