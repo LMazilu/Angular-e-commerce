@@ -6,15 +6,30 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { MatButton } from '@angular/material/button';
+import {
+  MatError,
+  MatFormField,
+  MatInput,
+  MatLabel,
+} from '@angular/material/input';
+import { MatOption, MatSelect } from '@angular/material/select';
 import { Router } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { maxPriceValidator } from '../validators/max-price.validator';
-import { MatButton } from '@angular/material/button';
-import { MatError, MatFormField, MatInput, MatLabel } from '@angular/material/input';
 
 @Component({
   selector: 'app-product-create',
-  imports: [ReactiveFormsModule, MatButton, MatInput, MatFormField, MatError, MatLabel],
+  imports: [
+    ReactiveFormsModule,
+    MatButton,
+    MatInput,
+    MatFormField,
+    MatError,
+    MatLabel,
+    MatSelect,
+    MatOption,
+  ],
   templateUrl: './product-create.component.html',
   styleUrl: './product-create.component.css',
   providers: [],

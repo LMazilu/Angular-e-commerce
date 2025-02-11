@@ -14,7 +14,7 @@ select {
   width: 220px;
 }
 
-input.ng-touched {
+/* input.ng-touched {
   border: 1px solid #BDBDBD;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
-}
+} */

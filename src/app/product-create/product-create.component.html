@@ -5,27 +5,30 @@
     <input matInput formControlName="title" required/>
     <mat-error>Il titolo è obbligatorio</mat-error>
   </mat-form-field>
-  
-  <div>
-    <label for="price">Prezzo</label>
-    <input id="price" formControlName="price" type="number" required />
+
+  <mat-form-field>
+    <mat-label>Prezzo</mat-label>
+    <input matInput formControlName="price" type="number" required/>
     @if (productForm?.controls?.price?.touched && productForm?.controls?.price?.hasError('min') ) {
-      <span class="help-text">Il prezzo minimo è 1</span>
+      <mat-error>Il prezzo minimo è 1</mat-error>
     }
     @else if (productForm?.controls?.price?.touched && productForm?.controls?.price?.hasError('maxPrice') ) {
-      <span class="help-text">Il prezzo massimo è 1000</span>
+      <mat-error>Il prezzo massimo è 1000</mat-error>
     } @else if (productForm?.controls?.price?.touched && productForm?.controls?.price?.invalid  ) {
-      <span class="help-text">Il prezzo è obbligatorio</span>
+      <mat-error>Il prezzo è obbligatorio</mat-error>
     }
-  </div>
-  <div>
-    <label for="category">Categoria</label>
-    <select id="category" formControlName="category">
-      <option value="electronics">Electronics</option>
-      <option value="jewelery">Jewelery</option>
-      <option>Altro</option>
-    </select>
-  </div>
+  </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>Categoria</mat-label>
+    <mat-select formControlName="category">
+      <mat-option value="electronics">Electronics</mat-option>
+      <mat-option value="jewelery">Jewelery</mat-option>
+      <mat-option>Altro</mat-option>
+    </mat-select>
+    <mat-error>Selezionare una categoria</mat-error>
+  </mat-form-field>
+
   <!-- <h2>Dettagli aggiuntivi
   </h2>
     <form formGroupName="extra">
