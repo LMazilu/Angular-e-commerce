@@ -1,8 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { Product } from '../models/product';
-import { map, Observable, of, tap } from 'rxjs';
+import { catchError, map, Observable, of, tap, throwError } from 'rxjs';
 import { APP_SETTINGS } from '../app.settings';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams, HttpResponse, HttpStatusCode } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +23,8 @@ export class ProductsService {
           map((products) => {
             this.products = products;
             return this.products;
-          })
+          }),
+          catchError(this.handleError)
         );
     }
     return of(this.products);
@@ -62,5 +63,30 @@ export class ProductsService {
         this.products.splice(index, 1);
       })
     );
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    let message = '';
+
+    switch (error.status) {
+      case 0:
+        message = 'Connection error';
+        break;
+      case HttpStatusCode.InternalServerError:
+        message = 'Internal server error';
+        break;
+      case HttpStatusCode.BadRequest:
+        message = error.error.message;
+        break;
+      case HttpStatusCode.NotFound:
+        message = 'Not found';
+        break;
+      default:
+        message = 'An error occurred';
+    }
+
+    console.error(error.message);
+
+    return throwError(() => message);
   }
 }
