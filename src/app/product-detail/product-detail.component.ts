@@ -6,17 +6,18 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Observable, switchMap } from 'rxjs';
+import { FormsModule } from '@angular/forms';
+import { MatButton } from '@angular/material/button';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Product } from '../models/product';
 import { AuthService } from '../services/auth.service';
-import { ProductsService } from '../services/products.service';
-import { FormsModule } from '@angular/forms';
 import { CartService } from '../services/cart.service';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MatButton],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css',
   encapsulation: ViewEncapsulation.Emulated,

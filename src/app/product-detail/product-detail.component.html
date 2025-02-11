@@ -16,7 +16,7 @@
       <input name="price" type="number" placeholder="Nuovo prezzo"
         required min="1"
         #priceCtrl="ngModel" [(ngModel)]="price">
-      <button class="secondary" type="submit" [disabled]="priceForm.invalid">Modifica</button>
+      <button mat-stroked-button class="secondary" type="submit" [disabled]="priceForm.invalid">Modifica</button>
       @if (priceCtrl.dirty && (priceCtrl.invalid || priceCtrl.hasError('min'))) {
         <span class="help-text">Per favore inserisci un valore valido</span>
       }
@@ -27,11 +27,9 @@
     <p class="pill"> {{ product.category }} </p>
   </div>
 
-  <div class="button-group">
     @if (authService.isLoggedIn()) {
-      <button (click)="addToCart(product.id!)">Aggiungi al carrello</button>
+      <button mat-raised-button (click)="addToCart(product.id!)">Aggiungi al carrello</button>
     }
-    <button class="delete" (click)="remove(product)">Cancella</button>
-  </div>
+    <button mat-raised-button class="delete" (click)="remove(product)">Cancella</button>
 </div>
 }

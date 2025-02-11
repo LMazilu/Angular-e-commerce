@@ -1,12 +1,11 @@
 <h1>Aggiungi un prodotto</h1>
 <form [formGroup]="productForm!" (ngSubmit)="createProduct()">
-  <div>
-    <label for="title">Titolo</label>
-    <input id="title" formControlName="title" required/>
-    @if(productForm?.controls?.title?.touched && productForm?.controls?.title?.invalid){
-      <span class="help-text">Il titolo é obbligatorio</span>
-    }
-  </div>
+  <mat-form-field>
+    <mat-label>Titolo</mat-label>
+    <input matInput formControlName="title" required/>
+    <mat-error>Il titolo è obbligatorio</mat-error>
+  </mat-form-field>
+  
   <div>
     <label for="price">Prezzo</label>
     <input id="price" formControlName="price" type="number" required />
@@ -22,7 +21,6 @@
   <div>
     <label for="category">Categoria</label>
     <select id="category" formControlName="category">
-      <option>Scegli una categoria</option>
       <option value="electronics">Electronics</option>
       <option value="jewelery">Jewelery</option>
       <option>Altro</option>
@@ -41,6 +39,6 @@
       </div>
     </form> -->
   <div>
-    <button type="submit" [disabled]="productForm?.invalid">Crea</button>
+    <button mat-raised-button type="submit" [disabled]="productForm?.invalid">Crea</button>
   </div>
 </form>

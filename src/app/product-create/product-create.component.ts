@@ -9,10 +9,12 @@ import {
 import { Router } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { maxPriceValidator } from '../validators/max-price.validator';
+import { MatButton } from '@angular/material/button';
+import { MatError, MatFormField, MatInput, MatLabel } from '@angular/material/input';
 
 @Component({
   selector: 'app-product-create',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatButton, MatInput, MatFormField, MatError, MatLabel],
   templateUrl: './product-create.component.html',
   styleUrl: './product-create.component.css',
   providers: [],

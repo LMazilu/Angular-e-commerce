@@ -2,11 +2,11 @@
 @if (!authService.isLoggedIn()) {
   <!-- <h1>Benvenuto!</h1> -->
   <!-- <p>Accedi per visualizzare la lista dei prodotti.</p> -->
-  <button (click)="login()">Accedi</button>
+  <button mat-button (click)="login()">Accedi</button>
 }
 
 @else {
   <!-- <p>Ciao, David! </p> -->
   <!-- <p>Visualizza la lista dei prodotti.</p> -->
-  <button (click)="logout()">David - Logout</button>
+  <button mat-button (click)="logout()">David - Logout</button>
 }

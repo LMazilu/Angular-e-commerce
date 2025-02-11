@@ -6,10 +6,12 @@ import { SortPipe } from '../pipes/sort.pipe';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { ProductsService } from '../services/products.service';
 import { of, switchMap } from 'rxjs';
+import { MatMiniFabButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-product-list',
-  imports: [SortPipe, RouterLink],
+  imports: [SortPipe, RouterLink, MatMiniFabButton, MatIcon],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
   providers: [],
