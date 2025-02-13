@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<header> <a routerLink="/products"> <b>{{ settings.title }}</b> </a>
-  <span class="spacer"></span>
-    <div class="menu-links">
-      <a routerLink="/products" routerLinkActive="active">Products</a>
-      <a routerLink="/cart" routerLinkActive="active">Cart</a>
-      <a routerLink="/user" routerLinkActive="active">My profile</a>
-    </div>
-  <app-auth></app-auth>
+<header>
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <h2> <a routerLink="/products">{{settings.title}} </a> </h2>
+            <span class="spacer"></span>
+            <button routerLink="/products" routerLinkActive="active">Products</button>
+            <button routerLink="/cart" routerLinkActive="active">Cart</button>
+            <button routerLink="/user" routerLinkActive="active">My profile</button>
+            <app-auth></app-auth>
+        </mat-toolbar-row>
+    </mat-toolbar>
 </header>
 
 <main class="main">
@@ -15,4 +18,10 @@
   </div>
 </main>
 
-<footer id="footer" appcopyright> {{settings.title}} - v{{settings.version}}</footer>
+<footer> 
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span>{{settings.title}} - v{{settings.version}}</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</footer>
