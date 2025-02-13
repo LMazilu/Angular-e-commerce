@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <header>
-    <mat-toolbar>
+    
+</header>
+<mat-toolbar>
         <mat-toolbar-row>
             <h2> <a routerLink="/products">{{settings.title}} </a> </h2>
             <span class="spacer"></span>
-            <button routerLink="/products" routerLinkActive="active">Products</button>
-            <button routerLink="/cart" routerLinkActive="active">Cart</button>
-            <button routerLink="/user" routerLinkActive="active">My profile</button>
+            <mat-button routerLink="/products" routerLinkActive="active"> Products </mat-button>
+            <mat-button routerLink="/cart" routerLinkActive="active"> Cart </mat-button>
+            <mat-button routerLink="/user" routerLinkActive="active"> My profile </mat-button>
             <app-auth></app-auth>
         </mat-toolbar-row>
     </mat-toolbar>
-</header>
 
 <main class="main">
   <div class="content">

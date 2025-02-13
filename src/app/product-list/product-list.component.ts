@@ -1,17 +1,33 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, inject, viewChild } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { MatMiniFabButton } from '@angular/material/button';
+import {
+  MatButtonToggle,
+  MatButtonToggleGroup,
+} from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
+import { MatIcon } from '@angular/material/icon';
+import { MatTable, MatTableModule } from '@angular/material/table';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { of, switchMap } from 'rxjs';
 import { Product } from '../models/product';
 import { SortPipe } from '../pipes/sort.pipe';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
-import { ProductsService } from '../services/products.service';
-import { of, switchMap } from 'rxjs';
-import { MatMiniFabButton } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-product-list',
-  imports: [SortPipe, RouterLink, MatMiniFabButton, MatIcon],
+  imports: [
+    SortPipe,
+    CurrencyPipe,
+    RouterLink,
+    MatMiniFabButton,
+    MatIcon,
+    MatCardModule,
+    MatTableModule,
+    MatButtonToggle,
+    MatButtonToggleGroup,
+  ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
   providers: [],
@@ -22,16 +38,9 @@ export class ProductListComponent {
     this.route.data.pipe(switchMap((data) => of(data['products']))),
     { initialValue: [] }
   );
-  // products = toSignal(
-  //   this.route.queryParamMap.pipe(
-  //     switchMap((params) => {
-  //       return inject(ProductsService).getProducts(Number(params.get('limit')));
-  //     })
-  //   ),
-  //   { initialValue: [] }
-  // );
   selectedProduct: Product | undefined;
   productDetail = viewChild(ProductDetailComponent);
+  columnNames = ['title', 'price'];
 
   constructor() {}
 

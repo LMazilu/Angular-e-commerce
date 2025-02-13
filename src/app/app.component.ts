@@ -14,7 +14,6 @@ import { MatButton } from '@angular/material/button';
     RouterLink,
     MatToolbar,
     MatToolbarRow,
-    MatButton
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
