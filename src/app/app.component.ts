@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { APP_SETTINGS } from './app.settings';
 import { AuthComponent } from './auth/auth.component';
-import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
-import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,7 @@ import { MatButton } from '@angular/material/button';
     RouterLink,
     MatToolbar,
     MatToolbarRow,
+    MatButtonModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
