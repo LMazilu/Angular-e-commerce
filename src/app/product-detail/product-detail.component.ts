@@ -7,17 +7,37 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatButton } from '@angular/material/button';
+import { MatButton, MatIconButton } from '@angular/material/button';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product';
 import { AuthService } from '../services/auth.service';
 import { CartService } from '../services/cart.service';
 import { ProductsService } from '../services/products.service';
+import {
+  MatError,
+  MatFormField,
+  MatInput,
+  MatSuffix,
+} from '@angular/material/input';
+import { MatIcon } from '@angular/material/icon';
+import { MatChipSet, MatChip } from '@angular/material/chips';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule, FormsModule, MatButton],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatButton,
+    MatInput,
+    MatFormField,
+    MatError,
+    MatIcon,
+    MatSuffix,
+    MatIconButton,
+    MatChipSet,
+    MatChip
+  ],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css',
   encapsulation: ViewEncapsulation.Emulated,
@@ -33,7 +53,7 @@ export class ProductDetailComponent implements OnInit {
     public authService: AuthService,
     private route: ActivatedRoute,
     private router: Router,
-    private cartService : CartService
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -51,7 +71,7 @@ export class ProductDetailComponent implements OnInit {
     // );
   }
 
-  addToCart(id:number) {
+  addToCart(id: number) {
     this.cartService.addProduct(id).subscribe();
   }
 

@@ -13,19 +13,26 @@
   </p>
 
   <form (ngSubmit)="changePrice(product)" #priceForm="ngForm">
-      <input name="price" type="number" placeholder="Nuovo prezzo"
+    <mat-form-field>
+      <input matInput name="price" type="number" placeholder="Nuovo prezzo"
         required min="1"
         #priceCtrl="ngModel" [(ngModel)]="price">
-      <button mat-stroked-button class="secondary" type="submit" [disabled]="priceForm.invalid">Modifica</button>
-      @if (priceCtrl.dirty && (priceCtrl.invalid || priceCtrl.hasError('min'))) {
-        <span class="help-text">Per favore inserisci un valore valido</span>
-      }
+      
+      <button mat-icon-button matSuffix type="submit" [disabled]="priceForm.invalid">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <mat-error>
+        Per favore inserisci un valore valido
+      </mat-error>
+
+    </mat-form-field>
   </form>
 
-  <div class="pill-group">
-    {{ product.description }}
-    <p class="pill"> {{ product.category }} </p>
-  </div>
+  <mat-chip-set>
+    <mat-chip>
+      {{ product.category }}
+    </mat-chip>
+  </mat-chip-set>
 
     @if (authService.isLoggedIn()) {
       <button mat-raised-button (click)="addToCart(product.id!)">Aggiungi al carrello</button>
