@@ -6,6 +6,7 @@ import { APP_SETTINGS } from './app.settings';
 import { AuthComponent } from './auth/auth.component';
 import { CartService } from './services/cart.service';
 import { MatBadge } from '@angular/material/badge';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -25,4 +26,5 @@ import { MatBadge } from '@angular/material/badge';
 export class AppComponent {
   settings = inject(APP_SETTINGS);
   cartService = inject(CartService);
+  apiUrl = environment.apiUrl;
 }
