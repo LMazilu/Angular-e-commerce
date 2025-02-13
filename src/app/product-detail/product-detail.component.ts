@@ -8,20 +8,21 @@ import {
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButton, MatIconButton } from '@angular/material/button';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Product } from '../models/product';
-import { AuthService } from '../services/auth.service';
-import { CartService } from '../services/cart.service';
-import { ProductsService } from '../services/products.service';
+import { MatChip, MatChipSet } from '@angular/material/chips';
+import { MatIcon } from '@angular/material/icon';
 import {
   MatError,
   MatFormField,
   MatInput,
   MatSuffix,
 } from '@angular/material/input';
-import { MatIcon } from '@angular/material/icon';
-import { MatChipSet, MatChip } from '@angular/material/chips';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Product } from '../models/product';
+import { AuthService } from '../services/auth.service';
+import { CartService } from '../services/cart.service';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -36,7 +37,8 @@ import { MatChipSet, MatChip } from '@angular/material/chips';
     MatSuffix,
     MatIconButton,
     MatChipSet,
-    MatChip
+    MatChip,
+    MatSnackBarModule,
   ],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css',
@@ -53,7 +55,8 @@ export class ProductDetailComponent implements OnInit {
     public authService: AuthService,
     private route: ActivatedRoute,
     private router: Router,
-    private cartService: CartService
+    private cartService: CartService,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -72,7 +75,11 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addToCart(id: number) {
-    this.cartService.addProduct(id).subscribe();
+    this.cartService.addProduct(id).subscribe(() => {
+      this.snackBar.open('Prodotto aggiunto al carrello', 'Chiudi', {
+        duration: 2000,
+      });
+    });
   }
 
   changePrice(product: Product) {
