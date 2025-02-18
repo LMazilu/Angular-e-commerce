@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MatBadge } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { environment } from '../environments/environment';
 import { APP_SETTINGS } from './app.settings';
@@ -23,6 +24,7 @@ import { CopyrightDirective } from './directives/copyright.directive';
     MatToolbarRow,
     MatButtonModule,
     MatBadge,
+    MatProgressSpinnerModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

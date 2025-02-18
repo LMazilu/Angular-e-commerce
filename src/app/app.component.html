@@ -16,13 +16,17 @@
   <div class="content">
     <router-outlet></router-outlet>
   </div>
-  @defer () {
+  @defer (on viewport) {
     <app-featured/>
+  }
+  @placeholder {
+    <!-- <mat-spinner ngSkipHydration></mat-spinner> -->
+     <img src="images/placeholder.png">
   }
 </main>
 
 <footer>
-  <mat-toolbar ngSkipHydration>
+  <mat-toolbar>
     <mat-toolbar-row>
       <span appCopyright>{{settings.title}} - v{{settings.version}}</span>
     </mat-toolbar-row>
