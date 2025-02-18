@@ -16,12 +16,15 @@
   <div class="content">
     <router-outlet></router-outlet>
   </div>
+  @defer () {
+    <app-featured/>
+  }
 </main>
 
-<footer> 
-  <mat-toolbar>
+<footer>
+  <mat-toolbar ngSkipHydration>
     <mat-toolbar-row>
-      <span>{{settings.title}} - v{{settings.version}}</span>
+      <span appCopyright>{{settings.title}} - v{{settings.version}}</span>
     </mat-toolbar-row>
   </mat-toolbar>
 </footer>

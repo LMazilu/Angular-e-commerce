@@ -14,7 +14,7 @@ export class ProductsService {
 
   constructor(private http: HttpClient) {}
 
-  getProducts(limit?:number): Observable<Product[]> {
+  getProducts(limit?: number): Observable<Product[]> {
     if (this.products.length === 0) {
       const options = new HttpParams().set('limit', limit || 10);
       return this.http
@@ -65,4 +65,7 @@ export class ProductsService {
     );
   }
 
+  getFeatured(): Observable<Product> {
+    return this.http.get<Product>(this.productsUrl + '/20');
+  }
 }
