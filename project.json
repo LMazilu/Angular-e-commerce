@@ -25,7 +25,14 @@
         "styles": [
           "src/styles.css"
         ],
-        "scripts": []
+        "scripts": {
+          "ng": "ng",
+          "start": "ng serve",
+          "build": "ng build",
+          "watch": "ng build --watch --configuration development",
+          "test": "ng test",
+          "serve:ssr:my-app": "node dist/my-app/server/server.mjs"
+        }
       },
       "configurations": {
         "production": {
@@ -83,7 +90,14 @@
         "styles": [
           "src/styles.css"
         ],
-        "scripts": []
+        "scripts": {
+          "ng": "ng",
+          "start": "ng serve",
+          "build": "ng build",
+          "watch": "ng build --watch --configuration development",
+          "test": "ng test",
+          "serve:ssr:my-app": "node dist/my-app/server/server.mjs"
+        }
       }
     }
   }
